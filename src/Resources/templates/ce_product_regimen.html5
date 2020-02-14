@@ -1,0 +1,15 @@
+
+<div class="row fade-effect hidden">
+	<div class="large-12 columns">
+		<div class="regimen-container">
+			<h5><?php echo $this->headline; ?></h5>
+			<hr>
+<?php foreach ($this->productList as $product): ?>
+			
+			<a href="<?php echo $product['href']; ?>" ><img src="<?php echo $product['imgSrc']; ?>" width="60" height="60" class="attachment-mini size-mini wp-post-image" alt="<?php echo $product['headline']; ?>" /><span><?php echo $product['headline']; ?></span></a>
+
+<?php endforeach; ?>
+			<div class="bottom-frame"></div>
+		</div>
+	</div>
+</div>

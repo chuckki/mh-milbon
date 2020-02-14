@@ -1,0 +1,68 @@
+<?php
+
+
+$groups = array(
+
+	'Smooth' => array(
+		'imgUrl' => '/files/productgroup/smooth-group-120x120.png',
+		'imgAlt' => 'Smooth Products',
+		'linkTitle' => 'Smooth Products',
+		'link' =>'/products/milbon-signature/smooth.html',
+		'headline' => 'Smooth',
+		'subtxt' => 'Für strukturgeschädigtes Haar'
+	),
+	'Moisture' => array(
+		'imgUrl' => '/files/productgroup/moisture-group-120x120.png',
+		'imgAlt' => 'Moisture Products',
+		'linkTitle' => 'Moisture Products',
+		'link' =>'/products/milbon-signature/moisture.html',
+		'headline' => 'Moisture',
+		'subtxt' => 'Für trockenes Haar'
+
+	),
+	'Repair' => array(
+		'imgUrl' => '/files/productgroup/repair-group-120x120.png',
+		'imgAlt' => 'Repair Products',
+		'linkTitle' => 'Repair Products',
+		'link' =>'/products/milbon-signature/repair.html',
+		'headline' => 'Repair',
+		'subtxt' => 'Für stark geschädigtes Haar'		
+	)
+);
+
+
+switch(count($this->chosen_collections)){
+	case 1:
+		$class = 'medium-6 columns medium-centered';
+		break;
+	case 2:
+		$class = 'medium-6 columns';	
+		break;
+	default:
+}
+
+
+?>
+
+<div class="row fade-effect hidden">
+   <div class="large-12 columns">
+      <h5 class="section-title">Weitere Produkte von Milbon</h5>
+   </div>
+</div>
+<div class="row fade-effect hidden">
+        <?php foreach ($this->chosen_collections as $collection): ?>        	
+   <div class="<?php echo $class; ?>">
+      <a class="collection-listing" href="<?php echo $groups[$collection]['link']; ?>" title="<?php echo $groups[$collection]['linkTitle']; ?>">
+         <div class="row collapse" data-equalizer>
+            <div class="medium-4 columns" data-equalizer-watch>
+               <img src="<?php echo $groups[$collection]['imgUrl']; ?>" alt="<?php echo $groups[$collection]['imgAlt']; ?>" />
+            </div>
+            <div class="medium-8 columns" data-equalizer-watch>
+               <h3><?php echo $groups[$collection]['headline']; ?><span><?php echo $groups[$collection]['subtxt']; ?></span>
+               </h3>
+            </div>
+         </div>
+      </a>
+   </div>
+   <?php endforeach; ?>
+</div>

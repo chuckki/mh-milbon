@@ -1,0 +1,13 @@
+
+<section class="intro ">
+	<?php if(!empty($this->collectionsTitel)): ?>
+	<span class="fade-effect hidden"><a href="/products/milbon-signature.html">Milbon Signature</a></span>
+	<?php endif;?>
+	<div class="fade-effect hidden">
+	<h1 ><?= $this->title; ?></h1>
+	<?php if(!empty($this->collectionsText)): ?>
+	<div class="intro__description"><?= $this->collectionsText; ?></div>
+	<?php endif;?>
+  	</div>
+</section>
+

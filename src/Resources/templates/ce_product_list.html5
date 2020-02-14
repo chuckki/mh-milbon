@@ -1,0 +1,105 @@
+
+<?php
+	if(!$this->isCategorie): 
+?>
+<!-- No Category -->
+<div class="row fade-effect hidden">
+    <div class="large-12 columns">
+        <h5 class="section-title"><?php echo $this->headline; ?></h5>
+    </div>
+</div>
+
+<div class="row fade-effect hidden">
+<?php 
+switch (count($this->productList)) {
+    case 1:
+        $colRow   = null;
+        $colCount = "3 medium-centered";
+        break;
+    case 2:
+        $colRow   = 6;
+        $colCount = 6;
+        break;
+    case 3:
+        $colRow   = 9;
+        $colCount = 4;
+        break;
+    case 4:
+        $colRow   = null;
+        $colCount = 3;
+        break;
+    
+    default:
+        $colRow   = null;
+        break;
+}
+
+if($colRow): ?>    
+    <div class="medium-<?php echo $colRow; ?> columns medium-centered collapse">
+<?php endif; ?>    
+        <?php foreach ($this->productList as $product): ?>
+        <div class="columns medium-<?php echo $colCount; ?>">
+            <a class="product-listing fade-effect hidden"
+               href="<?php echo $product['href']; ?>"
+               title="<?php echo $product['headline']; ?>">
+                <div class="img-wrap">
+                    <img
+                        src="<?php echo $product['imgSrc']; ?>"
+                        class="attachment-product-listing size-product-listing wp-post-image"
+                        alt="<?php echo $product['headline']; ?>">
+                </div>
+                <div class="title"><?php echo $product['headline']; ?></div>
+                <span><?php echo $product['tag']; ?></span>
+            </a>
+        </div>
+        <?php endforeach; ?>
+<?php if($colRow): ?>    
+    </div>
+<?php endif; ?>    
+
+</div>
+
+<?php 	
+	// Category
+	else: 
+?>
+<!-- Is Category -->
+<div class='row'>
+
+<?php
+ 	$counter = 1;
+	foreach ($this->productList as $product): 
+?>
+<?php 	
+	if($counter%3 == 1 and $counter > 1): 
+?>
+	</div><div class="row">
+<?php 	
+	endif; 
+	$endClass = "";
+	if($counter == count($this->productList)){
+		$endClass = " end";
+	};
+?>
+    <div class="columns medium-4<?php echo $endClass; ?>">
+        <a class="product-listing fade-effect hidden"
+           href="<?php echo $product['href']; ?>"
+           title="<?php echo $product['headline']; ?>">
+            <div class="img-wrap">
+                <img
+                    src="<?php echo $product['imgSrc']; ?>"
+                    class="attachment-product-listing size-product-listing wp-post-image"
+                    alt="<?php echo $product['headline']; ?>">
+            </div>
+            <div class="title"><?php echo $product['headline']; ?></div>
+            <span><?php echo $product['tag']; ?></span>
+        </a>
+    </div>
+<?php 	
+	$counter++;	
+?>	
+    <?php endforeach; ?>
+
+</div>
+<?php endif; ?>
+
