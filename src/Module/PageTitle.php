@@ -1,5 +1,5 @@
 <?php
-namespace milbon\classes\elements;
+namespace  Chuckki\MilbonBundle\Module;
 
 /**
  * pageimage Extension for Contao Open Source CMS
@@ -30,7 +30,7 @@ class PageTitle extends \Frontend
     public static function getOne(\PageModel $objPage, $intIndex=0, $blnInherit=true)
     {
         return null;
-        
+
         $arrImages = static::findForPage($objPage, $blnInherit);
 
         if ($arrImages === null) {

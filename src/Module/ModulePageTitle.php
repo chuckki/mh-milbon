@@ -1,5 +1,5 @@
 <?php
-namespace milbon\classes\elements;
+namespace  Chuckki\MilbonBundle\Module;
 
 /**
  * pageimage Extension for Contao Open Source CMS
@@ -56,7 +56,7 @@ class ModulePageTitle extends \Module
     protected function compile()
     {
         //return true;
-        
+
         if ($this->defineRoot) {
             $objPage = \PageModel::findByPk($this->rootPage);
         } else {
@@ -82,7 +82,7 @@ class ModulePageTitle extends \Module
         $arrImage['src'] = $this->getImage($arrImage['path'], $arrSize[0], $arrSize[1], $arrSize[2]);
 
         $this->Template->setData($arrImage);
-        
+
         $picture = \Picture::create($arrImage['path'], $arrSize)->getTemplateData();
         $picture['alt'] = specialchars($arrImage['alt']);
         $this->Template->picture = $picture;
@@ -98,7 +98,7 @@ class ModulePageTitle extends \Module
         $this->Template->collectionsTitel = $objPage->collectionsTitel;
         $this->Template->collectionsText = $objPage->collectionsText;
         $this->Template->title = $objPage->title;
-        $this->Template->alias = $objPage->alias;   
+        $this->Template->alias = $objPage->alias;
 
     }
 }

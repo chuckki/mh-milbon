@@ -34,10 +34,5 @@
         "psr-4": {
             "Chuckki\\MilbonBundle\\": "src/"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Chuckki\\MilbonBundle\\Tests\\": "tests/"
-        }
     }
 }

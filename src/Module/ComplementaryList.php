@@ -1,7 +1,7 @@
 <?php
 
 // classes/elements/ContentProduct.php
-namespace milbon\classes\elements;
+namespace  Chuckki\MilbonBundle\Module;
 
 /**
  * Class ContentProduct
