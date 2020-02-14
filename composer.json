@@ -1,5 +1,5 @@
 {
-    "name": "chuckki/milbon-bundle",
+    "name": "chuckki/mh-milbon",
     "type": "symfony-bundle",
     "description": "Modshair Milbon Addon",
     "license": "LGPL-3.0-or-later",
