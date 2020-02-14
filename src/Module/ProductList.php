@@ -1,12 +1,7 @@
 <?php
 
-// classes/elements/ContentProduct.php
 namespace  Chuckki\MilbonBundle\Module;
 
-/**
- * Class ContentProduct
- * @package esitcontent\classes\elements
- */
 class ProductList extends \ContentElement
 {
 
@@ -21,7 +16,6 @@ class ProductList extends \ContentElement
      */
     protected function compile()
     {
-
         if($this->is_regimen == 1){
             $this->Template->setName('ce_product_regimen');
         }
@@ -49,8 +43,6 @@ class ProductList extends \ContentElement
      * @return string
      */
     private function genFeOutput(){
-
-
 
         $selectedProducts = deserialize($this->product_list);
 
